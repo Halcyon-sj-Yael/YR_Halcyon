@@ -1,0 +1,534 @@
+/* Dream State Styles */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Dream Container */
+.dream-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Navigation */
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
+}
+
+.navigation a {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.navigation a.active {
+    background: rgba(138, 43, 226, 0.3);
+    border-color: #8a2be2;
+}
+
+/* Dream Title */
+.dream-title {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2.5em;
+    text-shadow: 0 0 20px #8a2be2;
+    z-index: 1000;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+/* Dream Scene */
+.dream-scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sky */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Moon */
+.moon {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #fff 0%, #f0f0f0 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: moonGlow 4s ease-in-out infinite alternate;
+}
+
+/* Stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.star-1 { top: 20%; left: 20%; animation-delay: 0s; }
+.star-2 { top: 30%; left: 70%; animation-delay: 0.5s; }
+.star-3 { top: 15%; left: 50%; animation-delay: 1s; }
+.star-4 { top: 40%; left: 30%; animation-delay: 1.5s; }
+.star-5 { top: 25%; left: 80%; animation-delay: 2s; }
+
+/* Clouds */
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    animation: cloudFloat 20s linear infinite;
+}
+
+.cloud-1 {
+    top: 100px;
+    left: -100px;
+    width: 80px;
+    height: 40px;
+    animation-duration: 25s;
+}
+
+.cloud-2 {
+    top: 150px;
+    left: -150px;
+    width: 120px;
+    height: 60px;
+    animation-duration: 30s;
+    animation-delay: -10s;
+}
+
+.cloud-3 {
+    top: 80px;
+    left: -200px;
+    width: 100px;
+    height: 50px;
+    animation-duration: 35s;
+    animation-delay: -20s;
+}
+
+/* Forest */
+.forest {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 2;
+}
+
+.tree {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, #2d5016 0%, #1a3009 100%);
+    border-radius: 5px 5px 0 0;
+}
+
+.tree::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 40px solid #0d4f0d;
+}
+
+.tree-1 { left: 5%; width: 20px; height: 120px; }
+.tree-2 { left: 15%; width: 25px; height: 150px; }
+.tree-3 { left: 25%; width: 18px; height: 100px; }
+.tree-4 { left: 35%; width: 22px; height: 130px; }
+.tree-5 { left: 55%; width: 20px; height: 110px; }
+.tree-6 { left: 65%; width: 24px; height: 140px; }
+.tree-7 { left: 75%; width: 19px; height: 120px; }
+.tree-8 { left: 85%; width: 21px; height: 160px; }
+
+/* Church */
+.church {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Church Body */
+.church-body {
+    position: relative;
+    width: 200px;
+    height: 120px;
+}
+
+.church-roof {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 60px solid #8B4513;
+}
+
+.church-walls {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, #D2B48C, #BC9A6A);
+    border: 3px solid #8B4513;
+    border-radius: 5px;
+}
+
+.church-door {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 60px;
+    background: #654321;
+    border-radius: 15px 15px 0 0;
+}
+
+.church-window {
+    position: absolute;
+    top: 20px;
+    width: 25px;
+    height: 30px;
+    background: linear-gradient(45deg, #4169E1, #87CEEB);
+    border: 2px solid #2c3e50;
+    border-radius: 5px;
+}
+
+.window-left { left: 20px; }
+.window-right { right: 20px; }
+
+/* Bell Tower */
+.bell-tower {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+}
+
+.tower-base {
+    width: 80px;
+    height: 20px;
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.tower-body {
+    width: 70px;
+    height: 100px;
+    background: linear-gradient(180deg, #D2B48C, #BC9A6A);
+    margin: 0 auto;
+    border: 3px solid #8B4513;
+    border-radius: 5px;
+    position: relative;
+}
+
+.tower-window {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 25px;
+    background: linear-gradient(45deg, #4169E1, #87CEEB);
+    border: 2px solid #2c3e50;
+    border-radius: 3px;
+}
+
+.bell-chamber {
+    width: 60px;
+    height: 40px;
+    background: linear-gradient(180deg, #BC9A6A, #D2B48C);
+    margin: 0 auto;
+    border: 3px solid #8B4513;
+    border-radius: 5px;
+    position: relative;
+}
+
+.bell-opening {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 10px;
+    background: #2c3e50;
+    border-radius: 5px;
+}
+
+.big-bell {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 25px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    animation: bellSway 3s ease-in-out infinite;
+}
+
+.bell-clapper {
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #8B4513;
+    border-radius: 50%;
+}
+
+.tower-spire {
+    width: 15px;
+    height: 50px;
+    background: linear-gradient(180deg, #8B4513, #A0522D);
+    margin: 0 auto;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+}
+
+/* Sound Waves */
+.sound-waves {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.sound-wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.wave-1 { width: 50px; height: 50px; }
+.wave-2 { width: 100px; height: 100px; }
+.wave-3 { width: 150px; height: 150px; }
+.wave-4 { width: 200px; height: 200px; }
+
+/* Dream Particles */
+.dream-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(138, 43, 226, 0.6);
+    border-radius: 50%;
+    animation: particleFloat 8s linear infinite;
+}
+
+.particle-1 { top: 20%; left: 10%; animation-delay: 0s; }
+.particle-2 { top: 40%; left: 80%; animation-delay: 2s; }
+.particle-3 { top: 60%; left: 20%; animation-delay: 4s; }
+.particle-4 { top: 30%; left: 60%; animation-delay: 6s; }
+.particle-5 { top: 70%; left: 70%; animation-delay: 1s; }
+.particle-6 { top: 50%; left: 40%; animation-delay: 3s; }
+
+/* Ground */
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, #2d5016, #1a3009);
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
+}
+
+/* Bell Control */
+.bell-control {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.ring-button {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #8a2be2, #9932cc);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.ring-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+}
+
+/* Animations */
+@keyframes titleGlow {
+    0% { text-shadow: 0 0 20px #8a2be2; }
+    100% { text-shadow: 0 0 30px #8a2be2, 0 0 40px #9932cc; }
+}
+
+@keyframes moonGlow {
+    0% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); }
+    100% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes cloudFloat {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+@keyframes bellSway {
+    0%, 100% { transform: translateX(-50%) rotate(-2deg); }
+    50% { transform: translateX(-50%) rotate(2deg); }
+}
+
+@keyframes bellRing {
+    0% { transform: translateX(-50%) rotate(-5deg); }
+    25% { transform: translateX(-50%) rotate(5deg); }
+    50% { transform: translateX(-50%) rotate(-3deg); }
+    75% { transform: translateX(-50%) rotate(3deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+@keyframes soundWaveExpand {
+    0% { 
+        width: 50px; 
+        height: 50px; 
+        opacity: 0.8; 
+    }
+    100% { 
+        width: 300px; 
+        height: 300px; 
+        opacity: 0; 
+    }
+}
+
+@keyframes particleFloat {
+    0% { 
+        transform: translateY(100vh) rotate(0deg); 
+        opacity: 0; 
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { 
+        transform: translateY(-100px) rotate(360deg); 
+        opacity: 0; 
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dream-title {
+        font-size: 2em;
+    }
+    
+    .church {
+        transform: translateX(-50%) scale(0.8);
+    }
+    
+    .moon {
+        width: 60px;
+        height: 60px;
+        right: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dream-title {
+        font-size: 1.5em;
+    }
+    
+    .church {
+        transform: translateX(-50%) scale(0.6);
+    }
+    
+    .moon {
+        width: 40px;
+        height: 40px;
+        right: 30px;
+    }
+}

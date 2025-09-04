@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream State - Forest Church</title>
+    <link rel="stylesheet" href="dream.css">
+</head>
+<body>
+    <div class="dream-container">
+        <!-- Navigation -->
+        <nav class="navigation">
+            <a href="index.html">SJSU Bell Tower</a>
+            <a href="dream.html" class="active">Dream State</a>
+        </nav>
+        
+        <h1 class="dream-title">Dream State</h1>
+        
+        <!-- Dream Scene -->
+        <div class="dream-scene">
+            <!-- Sky and Clouds -->
+            <div class="sky">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+                <div class="moon"></div>
+                <div class="stars">
+                    <div class="star star-1"></div>
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <div class="star star-4"></div>
+                    <div class="star star-5"></div>
+                </div>
+            </div>
+            
+            <!-- Forest Background -->
+            <div class="forest">
+                <div class="tree tree-1"></div>
+                <div class="tree tree-2"></div>
+                <div class="tree tree-3"></div>
+                <div class="tree tree-4"></div>
+                <div class="tree tree-5"></div>
+                <div class="tree tree-6"></div>
+                <div class="tree tree-7"></div>
+                <div class="tree tree-8"></div>
+            </div>
+            
+            <!-- Church Building -->
+            <div class="church">
+                <!-- Church Main Building -->
+                <div class="church-body">
+                    <div class="church-roof"></div>
+                    <div class="church-walls">
+                        <div class="church-door"></div>
+                        <div class="church-window window-left"></div>
+                        <div class="church-window window-right"></div>
+                    </div>
+                </div>
+                
+                <!-- Bell Tower -->
+                <div class="bell-tower">
+                    <div class="tower-base"></div>
+                    <div class="tower-body">
+                        <div class="tower-window"></div>
+                    </div>
+                    
+                    <!-- Bell Chamber -->
+                    <div class="bell-chamber">
+                        <div class="bell-opening"></div>
+                        <div class="big-bell" id="bigBell">
+                            <div class="bell-clapper"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tower Spire -->
+                    <div class="tower-spire">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sound Waves -->
+            <div class="sound-waves">
+                <div class="sound-wave wave-1"></div>
+                <div class="sound-wave wave-2"></div>
+                <div class="sound-wave wave-3"></div>
+                <div class="sound-wave wave-4"></div>
+            </div>
+            
+            <!-- Dream Particles -->
+            <div class="dream-particles">
+                <div class="particle particle-1"></div>
+                <div class="particle particle-2"></div>
+                <div class="particle particle-3"></div>
+                <div class="particle particle-4"></div>
+                <div class="particle particle-5"></div>
+                <div class="particle particle-6"></div>
+            </div>
+            
+            <!-- Ground -->
+            <div class="ground"></div>
+        </div>
+        
+        <!-- Bell Control -->
+        <div class="bell-control">
+            <button id="ringBell" class="ring-button">🔔 Ring the Bell</button>
+        </div>
+    </div>
+    
+    <script>
+        // Bell ringing animation
+        document.getElementById('ringBell').addEventListener('click', function() {
+            const bell = document.getElementById('bigBell');
+            const soundWaves = document.querySelectorAll('.sound-wave');
+            
+            // Ring the bell
+            bell.style.animation = 'bellRing 0.5s ease-in-out';
+            
+            // Show sound waves
+            soundWaves.forEach((wave, index) => {
+                setTimeout(() => {
+                    wave.style.animation = 'soundWaveExpand 2s ease-out forwards';
+                }, index * 200);
+            });
+            
+            // Reset animations after completion
+            setTimeout(() => {
+                bell.style.animation = 'bellSway 3s ease-in-out infinite';
+                soundWaves.forEach(wave => {
+                    wave.style.animation = 'none';
+                });
+            }, 3000);
+        });
+        
+        // Auto-ring bell every 10 seconds
+        setInterval(() => {
+            document.getElementById('ringBell').click();
+        }, 10000);
+    </script>
+</body>
+</html>
