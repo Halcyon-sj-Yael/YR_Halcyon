@@ -1,0 +1,686 @@
+/* Fourth Dream CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+.dream-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Navigation */
+.navigation {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.navigation a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.navigation a.active {
+    background: #4a90e2;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+/* Dream Title */
+.dream-title {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+/* Dream Scene */
+.dream-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Sky */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Moon */
+.moon {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #fff 0%, #f0f0f0 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: moonGlow 4s ease-in-out infinite alternate;
+}
+
+/* Stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.star-1 { top: 20%; left: 20%; animation-delay: 0s; }
+.star-2 { top: 30%; left: 70%; animation-delay: 0.5s; }
+.star-3 { top: 15%; left: 50%; animation-delay: 1s; }
+.star-4 { top: 40%; left: 30%; animation-delay: 1.5s; }
+.star-5 { top: 25%; left: 80%; animation-delay: 2s; }
+.star-6 { top: 35%; left: 10%; animation-delay: 0.3s; }
+.star-7 { top: 45%; left: 60%; animation-delay: 1.2s; }
+.star-8 { top: 10%; left: 40%; animation-delay: 0.8s; }
+.star-9 { top: 50%; left: 90%; animation-delay: 1.8s; }
+.star-10 { top: 5%; left: 15%; animation-delay: 2.3s; }
+
+/* Shooting Stars */
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+}
+
+.shooting-star::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #fff);
+    animation: shootingStarTrail 2s linear infinite;
+}
+
+.shooting-star-1 {
+    top: 20%;
+    left: 0%;
+    animation: shootingStar1 3s linear infinite;
+}
+
+.shooting-star-2 {
+    top: 40%;
+    left: 0%;
+    animation: shootingStar2 4s linear infinite;
+    animation-delay: 1s;
+}
+
+.shooting-star-3 {
+    top: 60%;
+    left: 0%;
+    animation: shootingStar3 3.5s linear infinite;
+    animation-delay: 2s;
+}
+
+/* Falling Dog Bones */
+.falling-bone {
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background: #F5F5DC;
+    border: 1px solid #D2B48C;
+    border-radius: 4px;
+    animation: boneFall 6s linear infinite;
+}
+
+.falling-bone::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 3px;
+    height: 6px;
+    background: #D2B48C;
+    border-radius: 1px;
+}
+
+.falling-bone::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    width: 3px;
+    height: 6px;
+    background: #D2B48C;
+    border-radius: 1px;
+}
+
+.bone-1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bone-2 {
+    left: 25%;
+    animation-delay: 1.2s;
+}
+
+.bone-3 {
+    left: 50%;
+    animation-delay: 2.4s;
+}
+
+.bone-4 {
+    left: 75%;
+    animation-delay: 3.6s;
+}
+
+.bone-5 {
+    left: 90%;
+    animation-delay: 4.8s;
+}
+
+.bone-6 {
+    left: 15%;
+    animation-delay: 6s;
+}
+
+.bone-7 {
+    left: 35%;
+    animation-delay: 7.2s;
+}
+
+.bone-8 {
+    left: 55%;
+    animation-delay: 8.4s;
+}
+
+.bone-9 {
+    left: 75%;
+    animation-delay: 9.6s;
+}
+
+.bone-10 {
+    left: 95%;
+    animation-delay: 10.8s;
+}
+
+/* Bone that hits the person */
+.bone-hit {
+    left: 45%;
+    animation: boneHitPerson 8s linear infinite;
+    z-index: 15;
+}
+
+/* Forest Background */
+.forest {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 5;
+}
+
+/* Trees in the back */
+.tree-1, .tree-2, .tree-3, .tree-4, .tree-5, .tree-6 {
+    z-index: 3;
+}
+
+/* Trees in the front */
+.tree-8, .tree-9, .tree-10, .tree-11, .tree-12, .tree-13, .tree-14, .tree-15 {
+    z-index: 7;
+}
+
+.tree {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 80px;
+    background: #8B4513;
+    border: 1px solid #654321;
+}
+
+.tree::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #228B22;
+}
+
+.tree-1 { left: 5%; height: 100px; }
+.tree-2 { left: 12%; height: 90px; }
+.tree-3 { left: 20%; height: 110px; }
+.tree-4 { left: 28%; height: 85px; }
+.tree-5 { left: 35%; height: 95px; }
+.tree-6 { left: 42%; height: 105px; }
+.tree-8 { left: 58%; height: 100px; }
+.tree-9 { left: 65%; height: 85px; }
+.tree-10 { left: 72%; height: 95px; }
+.tree-11 { left: 78%; height: 110px; }
+.tree-12 { left: 85%; height: 90px; }
+.tree-13 { left: 92%; height: 100px; }
+.tree-14 { left: 8%; height: 95px; }
+.tree-15 { left: 15%; height: 85px; }
+
+/* Person Sitting */
+.person-sitting {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    width: 20px;
+    height: 45px;
+    z-index: 10;
+}
+
+.person-sitting .person-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Person's Head */
+.person-sitting .person-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.person-sitting .person-eye {
+    position: absolute;
+    top: 3px;
+    width: 2px;
+    height: 2px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.person-sitting .eye-left {
+    left: 2px;
+}
+
+.person-sitting .eye-right {
+    right: 2px;
+}
+
+/* Person's Torso */
+.person-sitting .person-torso {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 18px;
+    background: #4a90e2;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+/* Person's Arms */
+.person-sitting .person-arm {
+    position: absolute;
+    top: 12px;
+    width: 3px;
+    height: 12px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.person-sitting .arm-left {
+    left: 2px;
+    transform: rotate(-15deg);
+}
+
+.person-sitting .arm-right {
+    right: 2px;
+    transform: rotate(15deg);
+}
+
+.person-sitting .person-hand {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+/* Person's Legs (bent for sitting) */
+.person-sitting .person-leg {
+    position: absolute;
+    top: 22px;
+    width: 4px;
+    height: 15px;
+    background: #2c3e50;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.person-sitting .leg-left {
+    left: 4px;
+    transform: rotate(-20deg);
+}
+
+.person-sitting .leg-right {
+    right: 4px;
+    transform: rotate(20deg);
+}
+
+.person-sitting .person-foot {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 3px;
+    background: #000;
+    border-radius: 3px;
+}
+
+/* Dog Sitting */
+.dog-sitting {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 35px;
+    height: 45px;
+    z-index: 8;
+}
+
+.dog-sitting .dog-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Dog's Head */
+.dog-sitting .dog-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 18px;
+    background: #D2691E;
+    border: 1px solid #000;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Dog's Ears */
+.dog-sitting .dog-ear {
+    position: absolute;
+    top: -3px;
+    width: 8px;
+    height: 10px;
+    background: #8B4513;
+    border: 1px solid #000;
+    border-radius: 50% 50% 0 0;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+}
+
+.dog-sitting .ear-left {
+    left: 2px;
+    transform: rotate(-20deg);
+}
+
+.dog-sitting .ear-right {
+    right: 2px;
+    transform: rotate(20deg);
+}
+
+/* Dog's Eyes */
+.dog-sitting .dog-eye {
+    position: absolute;
+    top: 5px;
+    width: 4px;
+    height: 4px;
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+.dog-sitting .eye-left {
+    left: 3px;
+}
+
+.dog-sitting .eye-right {
+    right: 3px;
+}
+
+/* Dog's Nose */
+.dog-sitting .dog-nose {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+/* Dog's Mouth */
+.dog-sitting .dog-mouth {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 4px;
+    border: 1px solid #000;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    background: #000;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+/* Dog's Torso */
+.dog-sitting .dog-torso {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 18px;
+    background: #D2691E;
+    border: 1px solid #000;
+    border-radius: 12px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Dog's Paws */
+.dog-sitting .dog-paw {
+    position: absolute;
+    top: 25px;
+    width: 8px;
+    height: 10px;
+    background: #8B4513;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+}
+
+.dog-sitting .paw-left {
+    left: 6px;
+}
+
+.dog-sitting .paw-right {
+    right: 6px;
+}
+
+/* Ground */
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(180deg, #2d5016 0%, #1a3009 100%);
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes titleGlow {
+    0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
+    100% { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(74, 144, 226, 0.6); }
+}
+
+@keyframes moonGlow {
+    0% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); }
+    100% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.8), 0 0 70px rgba(255, 255, 255, 0.3); }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes shootingStar1 {
+    0% { left: -50px; top: 20%; }
+    100% { left: 110%; top: 30%; }
+}
+
+@keyframes shootingStar2 {
+    0% { left: -50px; top: 40%; }
+    100% { left: 110%; top: 50%; }
+}
+
+@keyframes shootingStar3 {
+    0% { left: -50px; top: 60%; }
+    100% { left: 110%; top: 70%; }
+}
+
+@keyframes shootingStarTrail {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes boneFall {
+    0% { 
+        top: -30px; 
+        transform: rotate(0deg);
+    }
+    100% { 
+        top: 110%; 
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes boneHitPerson {
+    0% { 
+        top: -30px; 
+        transform: rotate(0deg);
+    }
+    60% { 
+        top: 60%; 
+        transform: rotate(180deg);
+    }
+    65% { 
+        top: 60%; 
+        transform: rotate(180deg) scale(1.2);
+    }
+    70% { 
+        top: 60%; 
+        transform: rotate(180deg) scale(0.8);
+    }
+    100% { 
+        top: 110%; 
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dream-title {
+        font-size: 2rem;
+        top: 60px;
+    }
+    
+    .navigation {
+        top: 10px;
+        padding: 8px 15px;
+        gap: 15px;
+    }
+    
+    .navigation a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .moon {
+        width: 60px;
+        height: 60px;
+        top: 30px;
+        right: 50px;
+    }
+    
+    .falling-bone {
+        width: 20px;
+        height: 6px;
+    }
+}

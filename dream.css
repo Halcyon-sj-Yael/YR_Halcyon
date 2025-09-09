@@ -170,7 +170,7 @@ body {
 .tree {
     position: absolute;
     bottom: 0;
-    background: linear-gradient(180deg, #2d5016 0%, #1a3009 100%);
+    background: linear-gradient(180deg, #8B4513 0%, #654321 100%);
     border-radius: 5px 5px 0 0;
 }
 
@@ -188,29 +188,238 @@ body {
 }
 
 .tree-1 { left: 2%; width: 20px; height: 120px; }
-.tree-2 { left: 8%; width: 25px; height: 150px; }
-.tree-3 { left: 12%; width: 18px; height: 100px; }
-.tree-4 { left: 18%; width: 22px; height: 130px; }
-.tree-5 { left: 25%; width: 20px; height: 110px; }
-.tree-6 { left: 32%; width: 24px; height: 140px; }
-.tree-7 { left: 38%; width: 19px; height: 120px; }
-.tree-8 { left: 45%; width: 21px; height: 160px; }
-.tree-9 { left: 52%; width: 23px; height: 135px; }
-.tree-10 { left: 58%; width: 17px; height: 95px; }
-.tree-11 { left: 62%; width: 26px; height: 145px; }
-.tree-12 { left: 68%; width: 20px; height: 115px; }
-.tree-13 { left: 72%; width: 24px; height: 155px; }
-.tree-14 { left: 78%; width: 19px; height: 125px; }
-.tree-15 { left: 82%; width: 22px; height: 140px; }
-.tree-16 { left: 88%; width: 25px; height: 165px; }
+.tree-2 { left: 6%; width: 25px; height: 150px; }
+.tree-3 { left: 10%; width: 18px; height: 100px; }
+.tree-4 { left: 14%; width: 22px; height: 130px; }
+.tree-5 { left: 18%; width: 20px; height: 110px; }
+.tree-6 { left: 22%; width: 24px; height: 140px; }
+.tree-7 { left: 26%; width: 19px; height: 120px; }
+.tree-8 { left: 30%; width: 21px; height: 160px; }
+.tree-9 { left: 34%; width: 23px; height: 135px; }
+.tree-10 { left: 38%; width: 17px; height: 95px; }
+.tree-11 { left: 42%; width: 20px; height: 125px; }
+.tree-12 { left: 46%; width: 22px; height: 145px; }
+.tree-13 { left: 54%; width: 18px; height: 105px; }
+.tree-14 { left: 58%; width: 25px; height: 155px; }
+.tree-15 { left: 62%; width: 19px; height: 115px; }
+.tree-16 { left: 66%; width: 21px; height: 135px; }
+.tree-17 { left: 70%; width: 23px; height: 165px; }
+.tree-18 { left: 74%; width: 17px; height: 95px; }
+.tree-19 { left: 78%; width: 24px; height: 140px; }
+.tree-20 { left: 82%; width: 20px; height: 120px; }
+
+/* Lake */
+.lake {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 160px;
+    z-index: 5;
+}
+
+.lake-water {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #4169E1, #1E90FF, #87CEEB);
+    border-radius: 50%;
+    border: 3px solid #2c3e50;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    animation: waterRipple 3s ease-in-out infinite;
+}
+
+.lake-reflection {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 20px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    border-radius: 50%;
+    animation: reflectionShimmer 2s ease-in-out infinite alternate;
+}
+
+/* Caves */
+.caves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 4;
+}
+
+.cave {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, #654321, #2c3e50);
+    border-radius: 50% 50% 0 0;
+    border: 2px solid #000;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.cave::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 40%;
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.cave-1 { left: 15%; width: 40px; height: 60px; }
+.cave-2 { left: 25%; width: 35px; height: 50px; }
+.cave-3 { left: 40%; width: 45px; height: 70px; }
+.cave-4 { left: 55%; width: 38px; height: 55px; }
+.cave-5 { left: 70%; width: 42px; height: 65px; }
+.cave-6 { left: 85%; width: 36px; height: 48px; }
+
+/* Ground */
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, #2d5016, #1a3009);
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
+}
+
+/* Sky */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Moon */
+.moon {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #fff 0%, #f0f0f0 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: moonGlow 4s ease-in-out infinite alternate;
+}
+
+/* Stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.star-1 { top: 20%; left: 20%; animation-delay: 0s; }
+.star-2 { top: 30%; left: 70%; animation-delay: 0.5s; }
+.star-3 { top: 15%; left: 50%; animation-delay: 1s; }
+.star-4 { top: 40%; left: 30%; animation-delay: 1.5s; }
+.star-5 { top: 25%; left: 80%; animation-delay: 2s; }
+
+/* Clouds */
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    animation: cloudFloat 20s linear infinite;
+}
+
+.cloud-1 {
+    top: 100px;
+    left: -100px;
+    width: 80px;
+    height: 40px;
+    animation-duration: 25s;
+}
+
+.cloud-2 {
+    top: 150px;
+    left: -150px;
+    width: 120px;
+    height: 60px;
+    animation-duration: 30s;
+    animation-delay: -10s;
+}
+
+.cloud-3 {
+    top: 80px;
+    left: -200px;
+    width: 100px;
+    height: 50px;
+    animation-duration: 35s;
+    animation-delay: -20s;
+}
+
+/* Forest */
+.forest {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 2;
+}
+
+.tree {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, #8B4513 0%, #654321 100%);
+    border-radius: 5px 5px 0 0;
+}
+
+.tree::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 40px solid #0d4f0d;
+}
+
+.tree-1 { left: 5%; width: 20px; height: 120px; }
+.tree-2 { left: 15%; width: 25px; height: 150px; }
+.tree-3 { left: 25%; width: 18px; height: 100px; }
+.tree-4 { left: 35%; width: 22px; height: 130px; }
+.tree-5 { left: 55%; width: 20px; height: 110px; }
+.tree-6 { left: 65%; width: 24px; height: 140px; }
+.tree-7 { left: 75%; width: 19px; height: 120px; }
+.tree-8 { left: 85%; width: 21px; height: 160px; }
 
 /* Parked Car */
 .parked-car {
     position: absolute;
     bottom: 20px;
     left: 20%;
-    width: 80px;
-    height: 40px;
+    width: 90px;
+    height: 35px;
     z-index: 8;
 }
 
@@ -218,74 +427,428 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #4169E1, #1E90FF);
-    border-radius: 8px 8px 4px 4px;
+    background: linear-gradient(45deg, #DC143C, #FF6347);
+    border-radius: 12px 12px 6px 6px;
     border: 2px solid #000;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .car-roof {
     position: absolute;
-    top: 5px;
-    left: 10px;
-    right: 10px;
-    height: 20px;
-    background: linear-gradient(45deg, #1E90FF, #87CEEB);
-    border-radius: 4px 4px 0 0;
+    top: 3px;
+    left: 8px;
+    right: 8px;
+    height: 18px;
+    background: linear-gradient(45deg, #B22222, #DC143C);
+    border-radius: 6px 6px 0 0;
     border: 1px solid #000;
 }
 
 .car-windshield {
     position: absolute;
-    top: 8px;
-    left: 15px;
-    right: 15px;
-    height: 12px;
+    top: 6px;
+    left: 12px;
+    right: 12px;
+    height: 10px;
     background: linear-gradient(45deg, #87CEEB, #B0E0E6);
-    border-radius: 2px;
+    border-radius: 3px;
     border: 1px solid #000;
 }
 
 .car-door {
     position: absolute;
-    top: 15px;
-    left: 20px;
-    width: 20px;
-    height: 15px;
-    background: #4169E1;
+    top: 12px;
+    left: 18px;
+    width: 25px;
+    height: 12px;
+    background: #B22222;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+.car-grille {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    width: 15px;
+    height: 8px;
+    background: #2c3e50;
     border: 1px solid #000;
     border-radius: 2px;
 }
 
 .car-wheel {
     position: absolute;
-    bottom: -5px;
-    width: 12px;
-    height: 12px;
+    bottom: -6px;
+    width: 14px;
+    height: 14px;
     background: #2c3e50;
     border: 2px solid #000;
     border-radius: 50%;
 }
 
 .wheel-front {
-    left: 8px;
+    left: 10px;
 }
 
 .wheel-back {
-    right: 8px;
+    right: 10px;
 }
 
 .car-headlight {
     position: absolute;
-    top: 12px;
-    left: -2px;
-    width: 6px;
-    height: 4px;
+    top: 10px;
+    left: -3px;
+    width: 8px;
+    height: 5px;
     background: #FFD700;
     border: 1px solid #000;
-    border-radius: 2px;
-    box-shadow: 0 0 8px #FFD700;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #FFD700;
     animation: headlightGlow 2s ease-in-out infinite alternate;
+}
+
+.car-tail-light {
+    position: absolute;
+    top: 10px;
+    right: -3px;
+    width: 6px;
+    height: 4px;
+    background: #FF0000;
+    border: 1px solid #000;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #FF0000;
+    animation: tailLightGlow 3s ease-in-out infinite alternate;
+}
+
+/* Person with Camera */
+.person {
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 20px;
+    height: 60px;
+    z-index: 9;
+    animation: personWalk 10s ease-in-out forwards;
+}
+
+.person-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Person's Head */
+.person-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.person-eye {
+    position: absolute;
+    top: 3px;
+    width: 2px;
+    height: 2px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.eye-left {
+    left: 2px;
+}
+
+.eye-right {
+    right: 2px;
+}
+
+/* Person's Torso */
+.person-torso {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 20px;
+    background: #4169E1;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+/* Person's Arms */
+.person-arm {
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 2px;
+    top: 14px;
+}
+
+.arm-left {
+    left: 2px;
+    transform: rotate(-20deg);
+    animation: armSwing 1s ease-in-out infinite alternate;
+}
+
+.arm-right {
+    right: 2px;
+    transform: rotate(20deg);
+    animation: armSwing 1s ease-in-out infinite alternate-reverse;
+}
+
+.person-hand {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+/* Video Camera */
+.video-camera {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 6px;
+}
+
+.camera-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c3e50;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.camera-lens {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.camera-viewfinder {
+    position: absolute;
+    top: -2px;
+    right: 1px;
+    width: 2px;
+    height: 2px;
+    background: #FFD700;
+    border: 1px solid #000;
+    border-radius: 1px;
+}
+
+/* Person's Legs */
+.person-leg {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #2c3e50;
+    border: 1px solid #000;
+    border-radius: 2px;
+    top: 32px;
+}
+
+.leg-left {
+    left: 4px;
+    animation: legWalk 1s ease-in-out infinite alternate;
+}
+
+.leg-right {
+    right: 4px;
+    animation: legWalk 1s ease-in-out infinite alternate-reverse;
+}
+
+.person-foot {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+}
+
+/* Person Inside Church */
+.person-inside {
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    width: 20px;
+    height: 60px;
+    z-index: 12;
+    opacity: 0;
+    animation: personInsideAppear 10s ease-in-out forwards;
+}
+
+.person-inside .person-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.person-inside .person-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.person-inside .person-eye {
+    position: absolute;
+    top: 3px;
+    width: 2px;
+    height: 2px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.person-inside .eye-left {
+    left: 2px;
+}
+
+.person-inside .eye-right {
+    right: 2px;
+}
+
+.person-inside .person-torso {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 20px;
+    background: #4169E1;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.person-inside .person-arm {
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 2px;
+    top: 14px;
+}
+
+.person-inside .arm-left {
+    left: 2px;
+    transform: rotate(-20deg);
+}
+
+.person-inside .arm-right {
+    right: 2px;
+    transform: rotate(20deg);
+}
+
+.person-inside .person-hand {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.person-inside .video-camera {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 6px;
+}
+
+.person-inside .camera-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c3e50;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.person-inside .camera-lens {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.person-inside .camera-viewfinder {
+    position: absolute;
+    top: -2px;
+    right: 1px;
+    width: 2px;
+    height: 2px;
+    background: #FFD700;
+    border: 1px solid #000;
+    border-radius: 1px;
+}
+
+.person-inside .person-leg {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #2c3e50;
+    border: 1px solid #000;
+    border-radius: 2px;
+    top: 32px;
+}
+
+.person-inside .leg-left {
+    left: 4px;
+}
+
+.person-inside .leg-right {
+    right: 4px;
+}
+
+.person-inside .person-foot {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
 }
 
 /* Church */
@@ -293,7 +856,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateZ(-40px);
     z-index: 10;
 }
 
@@ -335,6 +898,22 @@ body {
     height: 60px;
     background: #654321;
     border-radius: 15px 15px 0 0;
+    transform-origin: left center;
+    animation: doorOpen 10s ease-in-out forwards;
+    perspective: 100px;
+}
+
+.door-handle {
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 8px;
+    background: #FFD700;
+    border: 1px solid #000;
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgba(255, 215, 0, 0.5);
 }
 
 .church-window {
@@ -504,33 +1083,6 @@ body {
     box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
 }
 
-/* Bell Control */
-.bell-control {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
-
-.ring-button {
-    padding: 15px 30px;
-    background: linear-gradient(45deg, #8a2be2, #9932cc);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.ring-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
-}
 
 /* Animations */
 @keyframes titleGlow {
@@ -601,6 +1153,328 @@ body {
         box-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500; 
         opacity: 1; 
     }
+}
+
+@keyframes tailLightGlow {
+    0% { 
+        box-shadow: 0 0 6px #FF0000; 
+        opacity: 0.7; 
+    }
+    100% { 
+        box-shadow: 0 0 12px #FF0000, 0 0 20px #FF4500; 
+        opacity: 1; 
+    }
+}
+
+@keyframes personWalk {
+    0% { 
+        left: 25%; 
+        transform: translateY(0); 
+        opacity: 1;
+    }
+    20% { 
+        left: 35%; 
+        transform: translateY(-2px); 
+        opacity: 1;
+    }
+    40% { 
+        left: 45%; 
+        transform: translateY(0); 
+        opacity: 1;
+    }
+    60% { 
+        left: 55%; 
+        transform: translateY(-2px); 
+        opacity: 1;
+    }
+    80% { 
+        left: 65%; 
+        transform: translateY(0); 
+        opacity: 1;
+    }
+    100% { 
+        left: 75%; 
+        transform: translateY(-2px); 
+        opacity: 1;
+    }
+}
+
+@keyframes armSwing {
+    0% { 
+        transform: rotate(-20deg); 
+    }
+    100% { 
+        transform: rotate(20deg); 
+    }
+}
+
+@keyframes legWalk {
+    0% { 
+        transform: rotate(-10deg); 
+    }
+    100% { 
+        transform: rotate(10deg); 
+    }
+}
+
+@keyframes doorOpen {
+    0%, 40% { 
+        transform: translateX(-50%) rotateY(0deg); 
+    }
+    45% { 
+        transform: translateX(-50%) rotateY(-45deg); 
+    }
+    50%, 100% { 
+        transform: translateX(-50%) rotateY(-90deg); 
+    }
+}
+
+@keyframes personInsideAppear {
+    0%, 65% { 
+        opacity: 0; 
+    }
+    70%, 100% { 
+        opacity: 1; 
+    }
+}
+
+@keyframes waterRipple {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+    }
+    50% { 
+        transform: scale(1.02); 
+        box-shadow: inset 0 0 25px rgba(0,0,0,0.4);
+    }
+}
+
+@keyframes reflectionShimmer {
+    0% { 
+        opacity: 0.3; 
+        transform: translateX(-10px); 
+    }
+    100% { 
+        opacity: 0.7; 
+        transform: translateX(10px); 
+    }
+}
+
+@keyframes moonGlow {
+    0% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); }
+    100% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes cloudFloat {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+@keyframes personSearch {
+    0% { 
+        left: 20%; 
+        transform: translateY(0); 
+    }
+    20% { 
+        left: 30%; 
+        transform: translateY(-2px); 
+    }
+    40% { 
+        left: 40%; 
+        transform: translateY(0); 
+    }
+    60% { 
+        left: 50%; 
+        transform: translateY(-2px); 
+    }
+    80% { 
+        left: 60%; 
+        transform: translateY(0); 
+    }
+    100% { 
+        left: 70%; 
+        transform: translateY(-2px); 
+    }
+}
+
+@keyframes beamSweep {
+    0% { 
+        transform: translateX(-50%) rotate(-30deg); 
+        opacity: 0.3; 
+    }
+    50% { 
+        transform: translateX(-50%) rotate(30deg); 
+        opacity: 0.6; 
+    }
+    100% { 
+        transform: translateX(-50%) rotate(-30deg); 
+        opacity: 0.3; 
+    }
+}
+
+/* Person Searching */
+.person-searching {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 20px;
+    height: 60px;
+    z-index: 9;
+    animation: personSearch 12s ease-in-out infinite;
+}
+
+.person-searching .person-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Person's Head */
+.person-searching .person-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.person-searching .person-eye {
+    position: absolute;
+    top: 3px;
+    width: 2px;
+    height: 2px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.person-searching .eye-left {
+    left: 2px;
+}
+
+.person-searching .eye-right {
+    right: 2px;
+}
+
+/* Person's Torso */
+.person-searching .person-torso {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 20px;
+    background: #4169E1;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+/* Person's Arms */
+.person-searching .person-arm {
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 2px;
+    top: 14px;
+}
+
+.person-searching .arm-left {
+    left: 2px;
+    transform: rotate(-20deg);
+    animation: armSwing 1s ease-in-out infinite alternate;
+}
+
+.person-searching .arm-right {
+    right: 2px;
+    transform: rotate(20deg);
+    animation: armSwing 1s ease-in-out infinite alternate-reverse;
+}
+
+.person-searching .person-hand {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #FDBCB4;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+/* Flashlight */
+.flashlight {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 8px;
+}
+
+.flashlight-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c3e50;
+    border: 1px solid #000;
+    border-radius: 2px;
+}
+
+.flashlight-beam {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    border-radius: 50%;
+    animation: beamSweep 3s ease-in-out infinite;
+}
+
+/* Person's Legs */
+.person-searching .person-leg {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: #2c3e50;
+    border: 1px solid #000;
+    border-radius: 2px;
+    top: 32px;
+}
+
+.person-searching .leg-left {
+    left: 4px;
+    animation: legWalk 1s ease-in-out infinite alternate;
+}
+
+.person-searching .leg-right {
+    right: 4px;
+    animation: legWalk 1s ease-in-out infinite alternate-reverse;
+}
+
+.person-searching .person-foot {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
 }
 
 /* Responsive Design */
